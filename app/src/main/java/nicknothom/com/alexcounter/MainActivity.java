@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //Set the number to zero, so our view will show it properly when it is created on the next line
         number = 0;
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_material);
 
         //Define what "numberDisplay" is, now that it exists in the view
         numberDisplay = (TextView) findViewById(R.id.numberDisplay);
