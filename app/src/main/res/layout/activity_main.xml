@@ -7,34 +7,59 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentEnd="false"
-        android:background="#004D40"
-        android:elevation="15dp">
+        android:background="@color/blue"
+        android:elevation="15dp"
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
             android:id="@+id/numberDisplay"
-            android:textSize="50dp"
-            android:layout_above="@+id/button"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="24dp" />
+            android:textSize="80dp"
+            android:textColor="#ffffff"
+            android:layout_marginEnd="35dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Increment"
-            android:id="@+id/button"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="32dp"
-            android:onClick="increment"
+            android:text="-"
+            android:id="@+id/down"
+            android:onClick="down"
             android:minHeight="60dp"
-            android:minWidth="150dp" />
+            android:minWidth="150dp"
+            android:textSize="40dp"
+            android:layout_below="@+id/reset"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/up"
+            android:onClick="up"
+            android:minHeight="60dp"
+            android:minWidth="150dp"
+            android:textSize="30dp"
+            android:layout_above="@+id/reset"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:id="@+id/reset"
+            android:onClick="reset"
+            android:minHeight="60dp"
+            android:minWidth="150dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 </RelativeLayout>

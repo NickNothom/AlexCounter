@@ -1,24 +1,35 @@
 package nicknothom.com.alexcounter;
 
+import android.content.Context;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity {
 
     int number;
+
+    //Grab the textView out of the layout, call it "numberDisplay"
+    TextView numberDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        int number = 0;
+        //Set the number to zero, so our view will show it properly when it is created on the next line
+        number = 0;
 
         setContentView(R.layout.activity_main);
+
+        //Define what "numberDisplay" is, now that it exists in the view
+        numberDisplay = (TextView) findViewById(R.id.numberDisplay);
+
     }
 
     @Override
@@ -43,14 +54,48 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void increment (View v) {
-        TextView numberDisplay = (TextView) findViewById(R.id.numberDisplay);
+     public void up (View v) {
+         Vibrator vib = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
-        number++;
+         vib.vibrate(10);
+
+         //Add one to the number
+         number++;
+
+         //Define a string version of the number, so we can toss it in the textView
+         String numberString = Integer.toString(number);
+
+         //Set the text of the textview to our newly created String, which reflects the value of the integer "number"
+         numberDisplay.setText(numberString);
+
+    }
+
+    public void reset (View v) {
+        Vibrator vib = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+
+        vib.vibrate(40);
+
+        //Set the number to zero
+        number = 0;
+
+        //Define a string version of the number, so we can toss it in the textView
+        String numberString = Integer.toString(number);
+
+        //Set the text of the textview to our newly created String, which reflects the value of the integer "number"
+        numberDisplay.setText(numberString);
+
+    }
+
+    public void down (View v) {
+        Vibrator vib = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+
+        vib.vibrate(10);
+
+        number--;
 
         String numberString = Integer.toString(number);
 
         numberDisplay.setText(numberString);
-
     }
+
 }
