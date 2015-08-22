@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     tools:context=".MainActivity"
-    android:padding="20dp"
     android:background="#424242">
 
     <RelativeLayout
@@ -11,9 +10,11 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentEnd="false"
-        android:background="@color/blue"
         android:elevation="15dp"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:background="@color/blue"
+        android:layout_alignParentStart="false"
+        android:layout_margin="20dp">
 
         <TextView
             android:layout_width="wrap_content"
